@@ -6,7 +6,7 @@
     //
     // It is redundant to include "zig" in this name because it is already
     // within the Zig package namespace.
-    .name = "falchion-engine",
+    .name = "halberd",
 
     // This is a [Semantic Version](https://semver.org/).
     // In a future version of Zig it will be used for package deduplication.
@@ -30,6 +30,10 @@
         .zgpu = .{
             .url = "git+https://github.com/zig-gamedev/zgpu.git#bc10f874cf9c93e347c1298efba87be4f001fc9d",
             .hash = "122020a116e18cad9f4ea905ca63a1505a47d680feb6edc9ebcf34795bf338f5868b",
+        },
+        .@"wgpu-native-zig" = .{
+            .url = "git+https://github.com/bronter/wgpu-native-zig.git#f2934443e8b9c72a176bcf6f3a64fdf3e455e8c0",
+            .hash = "122097ec832ea9a33d23c35ed02a6c77824576ea0f3bb7cd8748ab5a50219b79615a",
         },
     },
     .paths = .{
