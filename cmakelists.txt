@@ -1,10 +1,12 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.24)
 
 # Set the project name
 project(Halberd)
 
+# Enable FetchContent
 include(FetchContent)
 
+# Fetch GLFW
 FetchContent_Declare(
     GLFW
     GIT_REPOSITORY https://github.com/glfw/glfw.git
@@ -13,12 +15,26 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(GLFW)
 
-# Set the C standard
-set(CMAKE_C_STANDARD 11)
+# Set the C standard to C99
+set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED True)
+
+# Find Vulkan
+find_package(Vulkan REQUIRED)
 
 # Add the executable
 add_executable(Halberd Main/main.c)
 
-# Link GLFW to the executable
-target_link_libraries(Halberd PRIVATE glfw)
+# Link GLFW and Vulkan
+target_link_libraries(Halberd PRIVATE glfw Vulkan::Vulkan)
+
+# Include Vulkan headers
+target_include_directories(Halberd PRIVATE ${Vulkan_INCLUDE_DIRS})
+
+# Add Vulkan library paths
+target_link_directories(Halberd PRIVATE ${Vulkan_LIBRARY_DIRS})
+
+# Ensure Vulkan loader is linked if necessary
+if (Vulkan_FOUND AND Vulkan_LIBRARIES)
+    target_link_libraries(Halberd PRIVATE ${Vulkan_LIBRARIES})
+endif()
