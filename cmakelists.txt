@@ -1,11 +1,24 @@
 cmake_minimum_required(VERSION 3.14)
 
 # Set the project name
-project(Halberd C)
+project(Halberd)
+
+include(FetchContent)
+
+FetchContent_Declare(
+    GLFW
+    GIT_REPOSITORY https://github.com/glfw/glfw.git
+    GIT_TAG 3.4
+)
+
+FetchContent_MakeAvailable(GLFW)
 
 # Set the C standard
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
 # Add the executable
-add_executable(MyCProject Main/main.c)
+add_executable(Halberd Main/main.c)
+
+# Link GLFW to the executable
+target_link_libraries(Halberd PRIVATE glfw)

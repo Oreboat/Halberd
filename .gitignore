@@ -1,3 +1,10 @@
 /build
 /.zig-cache
 /zig-out
+/_deps
+/bin
+/CMakeFiles
+CmakeCache.txt
+cmake_install.cmake
+Halberd.exe
+Makefile
