@@ -25,7 +25,6 @@ find_package(Vulkan REQUIRED)
 # Manually specify source files
 set(SOURCES   
     main/main.c
-
     modules/renderer/renderer.c
 )
 
