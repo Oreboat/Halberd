@@ -8,3 +8,5 @@ CmakeCache.txt
 cmake_install.cmake
 Halberd.exe
 Makefile
+/editor/target
+/modules/target
