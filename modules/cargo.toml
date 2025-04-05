@@ -3,4 +3,8 @@ name = "Halberd-Editor"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "modules"
+path = "modules.rs"
+
 [dependencies]
