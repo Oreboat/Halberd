@@ -101,3 +101,7 @@ void create_instance(AppInfo* info){
 
     free(extensions);
 }
+
+bool check_validation_layer_support(){
+    return false;
+}

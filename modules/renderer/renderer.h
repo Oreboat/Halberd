@@ -17,16 +17,18 @@ typedef struct AppInfo
 
 void run();
 
-int validation_layer_count;
-char* validation_layers[] = {
+extern int validation_layer_count;
+extern char* validation_layers[] = {
     "VK_LAYER_KHRONOS_validation"
 };
 
 #ifdef NDEBUG
-    const bool enable_validation_layers = false;
+    extern const bool enable_validation_layers = false;
 #else
-    const bool enable_validation_layers = true;
+    extern const bool enable_validation_layers = true;
 #endif
+
+extern bool check_validation_layer_support();
 
 
 void init_window(AppInfo* info);
