@@ -8,13 +8,15 @@ Entity Component System, or ECS for short, provides a simple, modular approach t
 
 ## Requirements
 a computer that supports Vulkan
+cmake if building manually
+cargo
 
 ## Downloading
 to download Halberd you can use
 
-`git clone https://github.com/Normal-Sink-Studio/Mordred-Engine.git`
+`git clone https://github.com/Oreboat/Halberd.git`
 
 and then simply build it
 
 ## Building
-Halberd can be build quite simpily using the command "zig build" and it can be build with the intention to run using "zig build run" that's it, no special commands, no makefiles, just a regular build
+Building Halberd yourself is simple, run Cmake . in order to configure the build system, then run Cmake --build ., through the power of commands this will build both the engine and the editor
