@@ -6,7 +6,8 @@ static struct Archetype
 
 static struct SparseSet
 {
-    /* data */
+    int page_size;
+    
 };
 
 typedef union component

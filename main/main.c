@@ -1,5 +1,9 @@
 
-#include "renderer/renderer.h"
+#include "renderer/renderer.c"
+#include "ecs/world.c"
+#include "ecs/component.c"
+#include "ecs/entity.c"
+#include "ecs/system.c"
 
 int main(){
     
